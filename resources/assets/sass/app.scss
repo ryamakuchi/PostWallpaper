@@ -1,0 +1,105 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.navbar-laravel {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.cardText {
+    position: relative;
+    max-height: 100px;
+    overflow: hidden;
+
+    &::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        content: '';
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.7) 20%, rgba(255,255,255,1) 80%);
+    }
+}
+
+.cardImg {
+    overflow: hidden;
+
+    img {
+        overflow: hidden;
+        object-fit: cover;
+        max-height: 300px;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+    }
+
+    img:hover {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+}
+
+.showImg {
+    max-height: 1000px;
+}
+
+@mixin hoverEffect {
+    transition-property: all;
+    transition: 0.3s linear;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.card:hover {
+    @include hoverEffect;
+}
+
+.aText {
+    color: rgba(0, 0, 0, 0.8);
+    text-decoration: none;
+    &:hover {
+        color: rgba(0, 0, 0, 0.8);
+        text-decoration: none;
+    }
+}
+
+.hoverEffect:hover {
+    @include hoverEffect;
+}
+
+.tags {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    ul li {
+      display: inline-block;
+      margin: 0 0 .3em .5em;
+      padding: 0;
+    }
+    ul li span {
+      color: #fff;/*文字色*/
+      padding: 0.3em;/*文字周りの余白*/
+      display: inline-block;/*おまじない*/
+      line-height: 1.5;/*行高*/
+      background: #3498db;/*背景色*/
+      vertical-align: middle;/*上下中央*/
+      border-radius: 25px 0px 0px 25px;/*左側の角を丸く*/
+    }
+    ul li span:before {
+      content: '';
+      color: white;
+      margin-right: 3px;
+      margin-left: 2px;
+    }
+}
